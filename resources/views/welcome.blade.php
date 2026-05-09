@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5>Data Perkiraan</h5>
-                    <a href="/perkiraan" class="btn w-100" style="background-color:#6c5ce7; color:white;">Buka</a>
+                    <a href="/perkiraan" class="btn btn-primary w-100">Buka</a>
                 </div>
             </div>
         </div>
@@ -26,7 +26,31 @@
             <div class="card">
                 <div class="card-body">
                     <h5>Jurnal Umum</h5>
-                    <a href="/jurnal" class="btn w-100" style="background-color:#00b894; color:white;">Buka</a>
+                    <a href="/jurnal" class="btn btn-primary w-100">Buka</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Jurnal Detail</h5>
+                    <a href="/jurnal_detail" class="btn btn-primary w-100">Buka</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Buku Besar</h5>
+                    <a href="/buku_besar" class="btn btn-primary w-100">Buka</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Saldo Akun</h5>
+                    <a href="/saldo_akun" class="btn btn-primary w-100">Buka</a>
                 </div>
             </div>
         </div>
@@ -34,7 +58,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5>Data Pelanggan</h5>
-                    <a href="/pelanggan" class="btn w-100" style="background-color:#e17055; color:white;">Buka</a>
+                    <a href="/pelanggan" class="btn btn-primary w-100">Buka</a>
                 </div>
             </div>
         </div>
@@ -42,7 +66,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5>Data Pemasok</h5>
-                    <a href="/pemasok" class="btn w-100" style="background-color:#0984e3; color:white;">Buka</a>
+                    <a href="/pemasok" class="btn btn-primary w-100">Buka</a>
                 </div>
             </div>
         </div>
@@ -50,7 +74,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5>Faktur Penjualan</h5>
-                    <a href="/faktur_penjualan" class="btn w-100" style="background-color:#fdcb6e; color:white;">Buka</a>
+                    <a href="/faktur_penjualan" class="btn btn-primary w-100">Buka</a>
                 </div>
             </div>
         </div>
@@ -58,7 +82,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5>Faktur Pembelian</h5>
-                    <a href="/faktur_pembelian" class="btn w-100" style="background-color:#d63031; color:white;">Buka</a>
+                    <a href="/faktur_pembelian" class="btn btn-primary w-100">Buka</a>
                 </div>
             </div>
         </div>
@@ -66,7 +90,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5>Pembayaran</h5>
-                    <a href="/pembayaran" class="btn w-100" style="background-color:#a29bfe; color:white;">Buka</a>
+                    <a href="/pembayaran" class="btn btn-primary w-100">Buka</a>
                 </div>
             </div>
         </div>
@@ -74,7 +98,15 @@
             <div class="card">
                 <div class="card-body">
                     <h5>Neraca Saldo</h5>
-                    <a href="/neraca_saldo" class="btn w-100" style="background-color:#55efc4; color:white;">Buka</a>
+                    <a href="/neraca_saldo" class="btn btn-primary w-100">Buka</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Laporan Keuangan</h5>
+                    <a href="/laporan_keuangan" class="btn btn-primary w-100">Buka</a>
                 </div>
             </div>
         </div>
