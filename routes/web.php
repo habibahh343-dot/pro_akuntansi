@@ -13,3 +13,4 @@ Route::resource('pemasok', App\Http\Controllers\PemasokController::class);
 Route::resource('faktur_penjualan', App\Http\Controllers\FakturPenjualanController::class);
 Route::resource('faktur_pembelian', App\Http\Controllers\FakturPembelianController::class);
 Route::resource('pembayaran', App\Http\Controllers\PembayaranController::class);
+Route::resource('neraca_saldo', App\Http\Controllers\NeracaSaldoController::class);
