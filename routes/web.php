@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return redirect('/');
+})->middleware('auth');
+
 Route::resource('perkiraan', App\Http\Controllers\PerkiraanController::class);
 Route::resource('jurnal', App\Http\Controllers\JurnalUmumController::class);
 Route::resource('pelanggan', App\Http\Controllers\PelangganController::class);
@@ -18,3 +22,13 @@ Route::resource('jurnal_detail', App\Http\Controllers\JurnalDetailController::cl
 Route::resource('buku_besar', App\Http\Controllers\BukuBesarController::class);
 Route::resource('saldo_akun', App\Http\Controllers\SaldoAkunController::class);
 Route::resource('laporan_keuangan', App\Http\Controllers\LaporanKeuanganController::class);
+
+// Profile
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', function () {
+        return view('profile.show');
+    })->name('profile.show');
+
+    Route::put('/profile/update', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+    Route::put('/profile/password', [App\Http\Controllers\ProfileController::class, 'updatePassword'])->name('profile.password');
+});
