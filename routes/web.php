@@ -2,9 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/user/profile', function () {
+    return redirect('/my-profile');
+})->middleware('auth');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Override Jetstream profile route
+Route::get('/profile', function () {
+    return view('profile.show');
+})->middleware('auth')->name('profile.show');
 
 Route::get('/home', function () {
     return redirect('/');
@@ -25,8 +34,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('saldo_akun', App\Http\Controllers\SaldoAkunController::class);
     Route::resource('laporan_keuangan', App\Http\Controllers\LaporanKeuanganController::class);
 
-    // Profile
-    Route::get('/profile', function () {
+    Route::get('/my-profile', function () {
         return view('profile.show');
     })->name('profile.show');
 
