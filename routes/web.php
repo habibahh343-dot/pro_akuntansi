@@ -7,7 +7,10 @@ Route::get('/user/profile', function () {
 })->middleware('auth');
 
 Route::get('/', function () {
-    return view('welcome');
+    if (auth()->check()) {
+        return view('welcome');
+    }
+    return view('landing');
 });
 
 // Override Jetstream profile route
