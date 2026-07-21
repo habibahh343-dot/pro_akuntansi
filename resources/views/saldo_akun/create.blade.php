@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tambah Saldo Akun</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-</head>
-<body>
+@extends('layouts.app')
+
+@section('title', 'Data Perkiraan / Chart of Account')
+
+@section('content')
 <div class="container mt-4">
     <h2>Tambah Saldo Akun</h2>
     <form action="{{ route('saldo_akun.store') }}" method="POST">
@@ -50,5 +48,4 @@
         <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
 </div>
-</body>
-</html>
+@endsection

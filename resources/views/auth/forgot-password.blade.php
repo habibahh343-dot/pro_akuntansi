@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Pro Akuntansi</title>
+    <title>Lupa Password - Pro Akuntansi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
@@ -23,50 +23,32 @@
 <body>
     <div class="card p-5" style="width:100%;max-width:420px;">
         <div class="text-center mb-4">
-            <i class="bi bi-box-arrow-in-right fs-1 text-primary"></i>
-            <h4 class="brand mt-2">Pro Akuntansi</h4>
-            <p class="text-muted small">Masuk ke akun Anda</p>
+            <i class="bi bi-key-fill fs-1 text-primary"></i>
+            <h4 class="brand mt-2">Lupa Password</h4>
+            <p class="text-muted small">Masukkan email Anda, kami akan kirim link reset password</p>
         </div>
 
         @if(session('status'))
             <div class="alert alert-success">{{ session('status') }}</div>
         @endif
 
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('password.email') }}">
             @csrf
-            <div class="mb-3">
+            <div class="mb-4">
                 <label class="form-label fw-semibold">Email</label>
                 <input type="email" name="email" value="{{ old('email') }}"
                     class="form-control @error('email') is-invalid @enderror"
                     placeholder="contoh@email.com" required autofocus>
                 @error('email')<div class="invalid-feedback">{{ $message }}</div>@enderror
             </div>
-            <div class="mb-3">
-                <label class="form-label fw-semibold">Password</label>
-                <input type="password" name="password"
-                    class="form-control @error('password') is-invalid @enderror"
-                    placeholder="••••••••" required>
-                @error('password')<div class="invalid-feedback">{{ $message }}</div>@enderror
-            </div>
-
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="remember" id="remember">
-                    <label class="form-check-label small" for="remember">Ingat saya</label>
-                </div>
-                @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}" class="small text-primary fw-semibold">Lupa password?</a>
-                @endif
-            </div>
-
             <div class="d-grid mb-3">
                 <button type="submit" class="btn btn-primary py-2 fw-semibold">
-                    <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                    <i class="bi bi-send me-1"></i> Kirim Link Reset Password
                 </button>
             </div>
             <div class="text-center">
-                <small class="text-muted">Belum punya akun? 
-                    <a href="{{ route('register') }}" class="text-primary fw-semibold">Daftar</a>
+                <small class="text-muted">
+                    <a href="{{ route('login') }}" class="text-primary fw-semibold">Kembali ke Login</a>
                 </small>
             </div>
         </form>

@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 class PerkiraanController extends Controller
 {
     public function index()
-    {
-        $perkiraans = Perkiraan::whereNull('parent_id')->with('children')->get();
-        return view('perkiraan.index', compact('perkiraans'));
-    }
+{
+    $perkiraans = Perkiraan::with('parent')->orderBy('kode')->get();
+    return view('perkiraan.index', compact('perkiraans'));
+}
 
     public function create()
     {

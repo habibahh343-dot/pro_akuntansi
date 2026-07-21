@@ -6,12 +6,19 @@
     <title>Sistem Informasi Akuntansi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', sans-serif; background: #f0f4f8; }
 
-        /* NAVBAR */
+        /* NAVBAR - Fixed di atas */
         .navbar-custom {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
             background: linear-gradient(90deg, #0f172a, #1e3a8a);
             padding: 14px 30px;
             display: flex;
@@ -26,6 +33,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            text-decoration: none;
         }
         .navbar-brand-custom span {
             color: #60a5fa;
@@ -46,27 +54,12 @@
             transition: background 0.2s;
         }
         .btn-login:hover { background: #2563eb; color: white; }
-        .btn-logout {
-            background: transparent;
-            color: #f87171;
-            border: 1px solid #f87171;
-            padding: 8px 22px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .btn-logout:hover { background: #f87171; color: white; }
-        .user-badge {
-            color: #93c5fd;
-            font-size: 0.9rem;
-        }
-
+        
         /* HERO */
         .hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #3b82f6 100%);
             color: white;
-            padding: 60px 40px 50px;
+            padding: 130px 40px 50px;
             text-align: center;
         }
         .hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
@@ -113,20 +106,24 @@
             padding: 28px 20px;
             text-align: center;
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transisi lebih halus */
             text-decoration: none;
             color: inherit;
             display: block;
         }
         .menu-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(30,58,138,0.15);
+            box-shadow: 0 12px 24px rgba(30,58,138,0.18);
             color: inherit;
         }
         .menu-icon {
             font-size: 2rem;
             margin-bottom: 12px;
             display: block;
+            transition: transform 0.3s ease;
+        }
+        .menu-card:hover .menu-icon {
+            transform: scale(1.12); /* Icon sedikit membesar saat di-hover */
         }
         .menu-card h6 {
             font-weight: 700;
@@ -144,6 +141,7 @@
             font-weight: 600;
             margin-top: 4px;
             display: inline-block;
+            transition: background 0.2s ease;
         }
         .menu-card:hover .btn-open { background: #3b82f6; }
 
@@ -173,20 +171,18 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar-custom">
-    <div class="navbar-brand-custom">
+<nav class="navbar-custom animate__animated animate__fadeInDown">
+    <a href="/" class="navbar-brand-custom">
         <i class="bi bi-bar-chart-fill" style="color:#60a5fa;font-size:1.5rem;"></i>
         Sistem Informasi <span>Akuntansi</span>
-    </div>
+    </a>
     <div class="navbar-right">
     @auth
-        <!-- Dropdown Profil -->
         <div class="dropdown">
             <button class="btn-login dropdown-toggle" type="button" data-bs-toggle="dropdown" style="background:#1e40af;">
                 <i class="bi bi-person-circle me-1"></i>{{ Auth::user()->name }}
             </button>
-            <ul class="dropdown-menu dropdown-menu-end shadow">
+            <ul class="dropdown-menu dropdown-menu-end shadow animate__animated animate__fadeIn animate__faster">
                 <li>
                     <div class="px-3 py-2 border-bottom">
                         <div class="fw-bold text-dark">{{ Auth::user()->name }}</div>
@@ -217,17 +213,15 @@
             <i class="bi bi-box-arrow-in-right me-1"></i>Login
         </a>
     @endauth
-</div>
-</div>
+    </div>
+</nav>
 
-<!-- HERO -->
-<div class="hero">
-    <h1><i class="bi bi-building me-2"></i>Pro Akuntansi</h1>
-    <p>Platform manajemen keuangan terintegrasi untuk bisnis modern Anda</p>
-</div>
+<section class="hero">
+    <h1 class="animate__animated animate__fadeInDown"><i class="bi bi-building me-2"></i>Pro Akuntansi</h1>
+    <p class="animate__animated animate__fadeInUp animate__delay-1s">Platform manajemen keuangan terintegrasi untuk bisnis modern Anda</p>
+</section>
 
-<!-- STATS -->
-<div class="stats-bar">
+<div class="stats-bar animate__animated animate__fadeInUp animate__delay-1s">
     <div class="stat-item">
         <div class="stat-number">12</div>
         <div class="stat-label">Modul Aktif</div>
@@ -242,9 +236,9 @@
     </div>
 </div>
 
-<!-- MENU -->
-<div class="section-title">Menu Utama</div>
-<div class="menu-grid">
+<div class="section-title animate__animated animate__fadeIn">Menu Utama</div>
+
+<div class="menu-grid animate__animated animate__fadeInUp animate__delay-1s">
     <a href="/perkiraan" class="menu-card c1">
         <span class="menu-icon"><i class="bi bi-journal-bookmark-fill"></i></span>
         <h6>Data Perkiraan</h6>

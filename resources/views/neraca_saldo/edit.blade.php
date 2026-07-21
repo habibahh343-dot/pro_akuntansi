@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit Neraca Saldo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-</head>
-<body>
+@extends('layouts.app')
+
+@section('title', 'Data Perkiraan / Chart of Account')
+
+@section('content')
+
 <div class="container mt-4">
     <h2>Edit Neraca Saldo</h2>
     <form action="{{ route('neraca_saldo.update', $neracaSaldo->id) }}" method="POST">
